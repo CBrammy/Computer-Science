@@ -1,0 +1,273 @@
+-----------------------------------------------------------------------------------------------------
+## ****Introduction to Functions****
+-----------------------------------------------------------------------------------------------------
+## **Task 1**
+-----------------------------------------------------------------------------------------------------
+The Following code provides a functon to square a number. Enter the program into Eclipse or Repl.itand run it.
+
+Modify the program to print the square of a few other numbers 10,5,35,4531
+
+-----------------------------------------------------------------------------------------------------
+public class Main {
+
+static int square(int x) {
+return x = x * x;
+	}
+
+public static void main(String[] args) {
+int myValue = square(10);
+		System.out.println("10 Squared is " + myValue);
+	}
+}
+-----------------------------------------------------------------------------------------------------
+**Solution**:
+
+Takes in a user input and squares that instead
+
+```java
+import java.util.Scanner;
+
+public class Main {
+
+static int square(int x) {
+return x = x * x;
+	}
+
+public static void main(String[] args) {
+Scanner myScan = new Scanner(System.in);
+System.out.println("Enter a number to square:");
+int input = myScan.nextInt();
+
+System.out.println("Your number squared is: " + square(input));
+	}
+}
+
+-----------------------------------------------------------------------------------------------------
+## **Task 2**
+-----------------------------------------------------------------------------------------------------
+Create a new function within the above code called `add5` that takes an integer x and returns x + 5;Test your `add5` function with the following numbers 10, 2, -5.
+
+**Solution**:
+
+```java
+public class Main {
+
+static int add5(int x){
+  return x + 5;
+}
+
+public static void main(String[] args) {
+System.out.println("Your number + 5 is: " + add5(10));
+	}
+}
+
+-----------------------------------------------------------------------------------------------------
+## **Task 3**
+-----------------------------------------------------------------------------------------------------
+Create a function called `triple` that takes an integer and returns that number tripled.Test your `triple` function with the following numbers 10, 2, -5.
+-----------------------------------------------------------------------------------------------------
+**Solution**:
+
+```java
+public class Main {
+
+static int triple(int x){
+  return x * 3;
+}
+
+public static void main(String[] args) {
+System.out.println("Your number tripled is: " + triple(10));
+	}
+}
+
+
+-----------------------------------------------------------------------------------------------------
+## **Task 4**
+-----------------------------------------------------------------------------------------------------
+Create a function called `smaller100` that takes an integer and return true if that number is smaller than 100 or false if the number is 100 or larger.
+-----------------------------------------------------------------------------------------------------
+**Solution**:
+
+```java
+public class Main {
+
+static boolean smaller100(int x){
+  if (x > 100){
+    return false;
+  } else {
+    return true;
+  }
+}
+
+public static void main(String[] args) {
+int myint = 101;
+  System.out.println("Is your number smaller than 100?");
+  System.out.println("Your number is " + myint);
+    System.out.println("The result is: " + smaller100(myint));
+
+	}
+}
+
+
+-----------------------------------------------------------------------------------------------------
+**Task 5**
+-----------------------------------------------------------------------------------------------------
+Create a function called `max` that takes two integer numbers and returns the larger of the two numbers.Such that the `int value = max(10,5)` would set value to 10.
+-----------------------------------------------------------------------------------------------------
+**Solution**:
+
+```java
+public class Main {
+
+static int max(int num1, int num2){
+  if (num1 > num2){
+    return num1;
+  } else {
+    return num2;
+  }
+}
+
+public static void main(String[] args) {
+  int firstnum = 5;
+  int secondnum = 10;
+  System.out.println("The highest number is: " + max(firstnum, secondnum));
+
+	}
+}
+
+
+-----------------------------------------------------------------------------------------------------
+## **Task 6**
+-----------------------------------------------------------------------------------------------------
+Create a function called shout that takes a String and return that string converted to uppercase and with an exclamation mark addded to the end.
+-----------------------------------------------------------------------------------------------------
+public static void main(String[] args) {
+
+		String message = "Hello";
+		System.out.println(message);
+	}
+```
+
+So the above code would print `HELLO!` to the screen.
+
+**Solution**:
+
+```java
+public class Main {
+
+static String shout(String x){
+ return x.toUpperCase();
+}
+
+public static void main(String[] args) {
+  
+System.out.println(shout("hello") + "!");
+
+	}
+}
+
+
+-----------------------------------------------------------------------------------------------------
+## **Task 7**
+-----------------------------------------------------------------------------------------------------
+Create a function called `longest` that takes two strings and returns the longest of the two strings.Such that `longest("Help","me")` would return `"Help"`.
+-----------------------------------------------------------------------------------------------------
+**Solution**:
+
+```java
+public class Main {
+
+static String longest(String word1, String word2){
+  if (word1.length() > word2.length()){
+return word1;
+  } else {
+    return word2;
+  }
+}
+
+public static void main(String[] args) {
+String word1 = "Java";
+String word2 = "Javascript";  
+  System.out.println(longest(word1, word2) + " is the longest word");
+	}
+}
+
+
+-----------------------------------------------------------------------------------------------------
+## **Task 8**
+-----------------------------------------------------------------------------------------------------
+Create a function called longestShout that takes two strings and returns the longest of the strings converted to uppercase and with an exclamation mark appended to the string.Such that `longestShout("Help","me")` would return `"HELP!"`.
+-----------------------------------------------------------------------------------------------------
+**Solution**:
+
+```java
+public class Main {
+
+static String longestShout(String word1, String word2){
+  if (word1.length() > word2.length()){
+return word1.toUpperCase() + "!";
+  } else {
+    return word2.toUpperCase() + "!";
+  }
+}
+
+public static void main(String[] args) {
+String word1 = "Java";
+String word2 = "Javascript";  
+  System.out.println(longestShout(word1, word2));
+	}
+}
+
+
+-----------------------------------------------------------------------------------------------------
+## **Task 9**
+-----------------------------------------------------------------------------------------------------
+Apply the `square` function to the numbers between 1 and 20 using a for loop.
+-----------------------------------------------------------------------------------------------------
+**Solution**:
+
+```java
+public class Main {
+
+static int square(int x) {
+  return x * x;     
+	}
+
+public static void main(String[] args) {
+  for (int i = 0; i <= 20; i++){      System.out.println(square(i));
+
+  }
+	}
+}
+
+
+-----------------------------------------------------------------------------------------------------
+## **Task 10**
+-----------------------------------------------------------------------------------------------------
+Create a program that asks the user for two numbers and then prints the maximum of the two numbers using your `max` function.
+-----------------------------------------------------------------------------------------------------
+**Solution**:
+
+```java
+import java.util.Scanner;
+
+public class Main {
+
+static int max (int num1, int num2){
+  if (num1 > num2){
+    return num1;
+  } else {
+    return num2;
+  }
+}
+
+public static void main(String[] args) {
+Scanner myScan = new Scanner(System.in);
+System.out.println("Enter a number");
+int num1 = myScan.nextInt();  
+System.out.println("Enter another number");
+int num2 = myScan.nextInt();  
+System.out.println("The biggest number is: " + max(num1, num2));  
+	}
+}
+-----------------------------------------------------------------------------------------------------
