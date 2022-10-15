@@ -1,0 +1,652 @@
+This is a list of the problems and solutions to the labs given in my Advance Object Oriented Programming course!
+All code is written in Java
+
+------------------------------------------------------------------------------------------------------
+Lab 1 - Hello World
+------------------------------------------------------------------------------------------------------
+# **Task 1**
+------------------------------------------------------------------------------------------------------
+The program below prints “Hello,World!” to the screen. Run the program and observe the output.
+
+------------------------------------------------------------------------------------------------------
+public class Main{
+
+public static void main(String[] args){
+System.out.println("Hello World");
+
+	}
+}
+
+------------------------------------------------------------------------------------------------------
+# **Task 2**
+------------------------------------------------------------------------------------------------------
+Now change the program to print “Hello”  with your own name
+------------------------------------------------------------------------------------------------------
+public class Main{
+
+public static void main(String[] args){
+System.out.println("Hello Chris!");
+
+	}
+}
+------------------------------------------------------------------------------------------------------
+# **Task 3**
+------------------------------------------------------------------------------------------------------
+The following program asks the user for their name and then prints hello .
+Change the program to ask the person favourite colour and then prints “Hello your favourite colour is ”
+------------------------------------------------------------------------------------------------------
+import java.util.Scanner;
+public class Main{
+
+public static void main(String[] args){
+Scanner myScan = new Scanner(System.in);
+  System.out.println("What is your favourite colour?");
+  String color = myScan.nextLine();
+  System.out.println("Oh... you like " + color + "?");
+ myScan.nextLine();
+System.out.println("I don't like it");
+	}
+}
+------------------------------------------------------------------------------------------------------
+Lab 2 - Introduction to Java Programming
+------------------------------------------------------------------------------------------------------
+# **Task 1**
+------------------------------------------------------------------------------------------------------
+classMain {
+publicstaticvoidmain(String[] args) {
+for (int i = 0; i < 5; i++) {
+      System.out.println(i);
+    }
+  }
+}
+------------------------------------------------------------------------------------------------------
+
+The above code prints
+
+0
+1
+2
+3
+4
+
+Change the program to print
+
+15
+25
+35
+45
+
+------------------------------------------------------------------------------------------------------
+class Main {
+  public static void main(String[] args) {
+    for (int i = 15; i <= 45; i+= 10) {
+      System.out.println(i);
+    }
+  }
+}
+------------------------------------------------------------------------------------------------------
+# **Task 2**
+------------------------------------------------------------------------------------------------------
+Replace the above for loops with while loops to produce the same output.
+------------------------------------------------------------------------------------------------------
+class Main {
+  public static void main(String[] args) {
+  int i = 15;
+    while (i <= 45) {
+    // Prints first to include 15  
+  System.out.println(i);
+  i += 10;
+    }
+  }
+}
+------------------------------------------------------------------------------------------------------
+# **Task 3**
+------------------------------------------------------------------------------------------------------
+Create a program using a for loop that prints the following.
+
+100
+90
+80
+70
+60
+50
+
+------------------------------------------------------------------------------------------------------
+class Main {
+  public static void main(String[] args) {
+for (int i = 100; i >= 50; i -= 10){
+  
+  System.out.println(i);  
+    }
+  }
+}
+------------------------------------------------------------------------------------------------------
+# **Task 4**
+------------------------------------------------------------------------------------------------------
+Exercise 1: Enter, compile and run the Java program below which asks the user to enter two integer numbers at the console and then calculates the product.
+
+------------------------------------------------------------------------------------------------------
+import java.util.Scanner;
+public classMain {
+public static void main(String[] args) {
+      Scanner in =new Scanner(System.in);
+int first, second;
+    System.out.println("Enter an integer> "); first=in.nextInt();
+    System.out.println("Enter an integer> "); second=in.nextInt();
+    System.out.println("The product is "+first*second);
+  }
+}
+------------------------------------------------------------------------------------------------------
+
+The Scanner class must be imported from java.util. It provides a wrapper class that encapsulates an input stream, such as the standard input (system.in), and it provides a number of convenience methods for reading lines and then breaking a line into tokens*
+
+`next():` Returns the next token as a string
+
+`nextInt():` Returns the next token as an integer
+
+`nextFloat():` Returns the next token in floating point format
+
+`nextDouble():` Returns the next token in double precision floating point format
+
+A stream can be thought of as a sequence of data elements made available over time. Data elements in streams could be of any kind: characters, integers, strings etc. A token is block of data elements (i.e. one or more) separated by a delimiter such as white space. For example, tokens can be the words in a sentence.
+
+------------------------------------------------------------------------------------------------------
+# **Task 5**
+------------------------------------------------------------------------------------------------------
+Enter, compile and run the Java program below which asks the user for information about their name, gender, salary, married status and prints out the information to the console.
+
+------------------------------------------------------------------------------------------------------
+import java.util.Scanner;
+
+public class Main {
+public static void main(String[] args) {
+		Scanner in =new Scanner(System.in);
+		String name;
+char gender;
+int age;
+char married;
+double salary;
+		System.out.print(" Enter your name => ");
+		name = in.next();
+		System.out.print(" Enter your age => ");
+		age = in.nextInt();
+		System.out.print(" Enter your salary => ");
+		salary = in.nextDouble();
+		System.out.print(" Enter your gender (m/f) => ");
+		gender = in.next().charAt(0);
+		System.out.print(" Are you married (y/n) => ");
+		married = in.next().charAt(0);
+		System.out.print("Name " + name + " Age " + age + " Salary " + salary + " Gender " + gender);
+if (married == 'y')
+			System.out.println(" married ");
+else
+			System.out.println(" single ");
+	}
+}
+------------------------------------------------------------------------------------------------------
+# **Task 6**
+------------------------------------------------------------------------------------------------------
+Enter, compile and run the Java program below and explain why it produces true and false results.
+------------------------------------------------------------------------------------------------------
+
+import java.util.Scanner;
+
+public class Main {
+public static void main(String[] args) {
+double bankBalance = -1000.56;
+boolean isMarried =false;
+int age = 63;
+boolean isPensionable = age > 60;// isPensionable is true
+boolean isOverdrawn = bankBalance < 0;// isOverdrawn is true
+	System.out.println(!(isPensionable && isMarried) && isOverdrawn); //true
+	System.out.println(!(isPensionable && isMarried ||	isOverdrawn)); //false
+		  }
+}
+
+------------------------------------------------------------------------------------------------------
+# **Task 7**
+------------------------------------------------------------------------------------------------------
+Enter, compile and run the Java program below which demonstrates how to use if-else statements public class exercise4 {
+------------------------------------------------------------------------------------------------------
+
+import java.util.Scanner;
+
+public class Main {
+public static void main(String[] args) {
+Scanner myScan = new Scanner(System.in);
+System.out.println("How old are you?");
+int age = myScan.nextInt();
+if (age < 5)
+			System.out.println("you are pre-School");
+else if (age <=16)
+			System.out.println("you are of school age ");
+else if ( age >= 18)
+			System.out.println("you may vote ");
+if (age >= 65)
+			System.out.println("you are eligible for retirement ");
+	}
+}
+------------------------------------------------------------------------------------------------------
+# **Task 8**
+------------------------------------------------------------------------------------------------------
+Enter, compile and run the Java program below which demonstrates the use of a do-while loop for calculating the sum and average of numbers entered at the keyboard.
+------------------------------------------------------------------------------------------------------
+
+import java.util.Scanner;
+
+public class Main {
+public static void main(String[] args) {
+		Scanner in =new Scanner(System.in);
+int sum = 0;
+int count = 0;
+int number;
+char answer;
+do {
+// Asks for a number input
+			System.out.print("enter number => ");
+			number = in.nextInt();
+//Stores user input as sum
+			sum = sum + number;
+//Counts how many numbers have been input
+			count++;
+//Asks user to continue or not
+			System.out.print("continue (y/n) => ");
+//Stores users answer from the first letter in answer variable
+			answer = in.next().charAt(0);
+//While answer is y repeats the do loop 
+		}while (answer == 'y');
+//When answer is not y, prints out the sum of the numbers and the average across the number of inputs.
+		System.out.println("sum " + sum + " average " + sum / count);
+	}
+}
+
+------------------------------------------------------------------------------------------------------
+# **Task 9**
+------------------------------------------------------------------------------------------------------
+Enter, compile and run the Java program below which demonstrates how to write and test functions.
+------------------------------------------------------------------------------------------------------
+
+public class Main {
+public static void main(String[] args) {
+		printTable(6);
+		System.out.println("Testing max function max(3,6) =" + max(3, 6));
+		System.out.println("Testing sum function sum(1,2,3) = " + sum(1, 2, 3));
+		printChars(6, 'A');
+		System.out.println("Testing compute function compute(2,3,'*') = " + compute(2, 3, '*'));
+	}
+// Creates a table called by printTable(num) that outputs that timestable by the max number in the for loop//
+public static void printTable(int table) {
+int index;
+for (index = 1; index <= 12; index++)
+			System.out.println(index + " x " + table + " = " + index * table);
+	}
+// Takes in two numbers and outputs the maximum of the two//
+public static int max(int x,int y) {
+if (x > y)
+return x;
+else return y;
+	}
+// Takes in 3 integers and outputs the sum//
+public static int sum(int x,int y,int z) {
+return x + y + z;
+	}
+
+//Takes in a number and a character and prints the character that many times, printChars (number, character) //
+public static void printChars(int numberOfChars,char thisChar) {
+int count;
+for (count = 1; count <= numberOfChars; count++)
+			System.out.print(thisChar);
+		System.out.println();
+	}
+// Takes in two integers and then a mathematic operator// 
+public static int compute(int x,int y,char operator) {
+if (operator == '*')
+return x * y;
+else if (operator == '/')
+return x / y;
+else if (operator == '+')
+return x + y;
+else if (operator == '-')
+return x - y;
+else return -999;
+	}
+}
+------------------------------------------------------------------------------------------------------
+# **Task 10**
+------------------------------------------------------------------------------------------------------
+Enter, compile and run the Java program below which demonstrates how to write a function which converts a month integer value to a string name.
+------------------------------------------------------------------------------------------------------
+import java.util.Scanner;
+
+public class Main {
+public static void main(String[] args) {
+int month = 1;
+		Scanner in =new Scanner(System.in);
+		System.out.println("Enter an integer 1 to 12> ");
+		month = in.nextInt();
+		System.out.println("Testing monthAsString = " + monthAsString(month));
+	}
+
+public static String monthAsString(int month) {
+switch (month) {
+case 1:
+return "January";
+case 2:
+return "February";
+case 3:
+return "March";
+case 4:
+return "April";
+case 5:
+return "May";
+case 6:
+return "June";
+case 7:
+return "July";
+case 8:
+return "August";
+case 9:
+return "September";
+case 10:
+return "October";
+case 11:
+return "Novemeber";
+case 12:
+return "December";
+default:
+return " ";
+		}
+	}
+}
+------------------------------------------------------------------------------------------------------
+
+
+Lab 3 - Nested Loops
+------------------------------------------------------------------------------------------------------
+## **Task 1**
+------------------------------------------------------------------------------------------------------
+It is a common practice to enclose one for loop within another for loop. This means the inner for loop itself will be repeated by the outer for loop.
+------------------------------------------------------------------------------------------------------
+public class Main {
+
+public static void main(String[] args) {
+for (int i = 0; i < 5; i++)
+for (int j = 0; j < 3; j++)
+				System.out.print("*");
+
+	}
+}
+------------------------------------------------------------------------------------------------------
+How many times does the “*” get printed to the screen and why?
+
+- Prints out 15 “*”’s
+------------------------------------------------------------------------------------------------------
+## **Task 2**
+------------------------------------------------------------------------------------------------------
+The `print` function prints a character but does not move to a new line.The `println()` function with no argument prints a new line.
+Modifying the program above we can print a new line after each iteration of the inner loop.
+------------------------------------------------------------------------------------------------------
+public class Main {
+
+public static void main(String[] args) {
+for (int i = 0; i < 5; i++) {
+for (int j = 0; j < 3; j++)
+				System.out.print("*");
+		System.out.println();
+		}
+
+	}
+
+}
+------------------------------------------------------------------------------------------------------
+
+This prints
+
+***
+***
+***
+***
+***
+
+------------------------------------------------------------------------------------------------------
+## **Task 3**
+------------------------------------------------------------------------------------------------------
+Change the program again to print the following pattern.
+
+*******
+*******
+*******
+
+------------------------------------------------------------------------------------------------------
+public class Main {
+
+public static void main(String[] args) {
+for (int i = 0; i < 3; i++) {
+for (int j = 0; j < 7; j++)
+				System.out.print("*");
+		System.out.println();
+		}
+	}
+}
+------------------------------------------------------------------------------------------------------
+## **Task 4**
+------------------------------------------------------------------------------------------------------
+We can use the outer loop counter to be the limit for the inner loop.Think carefully about this will print before running it.
+------------------------------------------------------------------------------------------------------
+public static void main(String[] args) {
+for (int i = 0; i < 10; i++) {
+for (int j = 0; j < i; j++)
+				System.out.print("*");
+		System.out.println();
+		}
+
+	}
+------------------------------------------------------------------------------------------------------
+
+outputs:
+*
+**
+***
+****
+*****
+******
+*******
+********
+*********
+
+------------------------------------------------------------------------------------------------------
+## **Task 5**
+------------------------------------------------------------------------------------------------------
+Again using two nested For loops how would you make it produce the following pattern
+
+**********
+*********
+********
+*******
+******
+*****
+****
+***
+**
+*
+
+------------------------------------------------------------------------------------------------------
+public class Main {
+
+public static void main(String[] args) {
+		for (int i = 10; i > 0; i--) {
+			for (int j = 0; j < i; j++)
+				System.out.print("*");
+		System.out.println();
+		}
+
+	}
+}
+------------------------------------------------------------------------------------------------------
+## **Task 6**
+produce the following pattern
+    /* Output:
+    *****====+
+    *****===++
+    *****==+++
+    *****=++++
+    *****+++++
+    ====++++++
+    ===+++++++
+    ==++++++++
+    =+++++++++
+    */
+ ------------------------------------------------------------------------------------------------------
+
+public static void main(String[] args) {
+    int star = 5; // initial state
+    int equals = 4;
+    int plus = 1;
+    for (int i=0; i<9; i++) {
+        for (int j=0; j<star; j++) System.out.print("*");
+        for (int j=0; j<equals; j++) System.out.print("=");
+        for (int j=0; j<plus; j++) System.out.print("+");
+        System.out.println();
+
+        if (star > 0 && equals == 0) {
+            star = 0;
+            equals = 5;
+        }
+        equals--;
+        plus++;
+    }
+}
+------------------------------------------------------------------------------------------------------
+
+How would you adapt the problem to print the following pattern again using nested loops.Hint: you can nest two loops inside one outer loop
+
+## Actual Task 6
+
+```
+*********+
+********++
+*******+++
+******++++
+*****+++++
+****++++++
+***+++++++
+**++++++++
+*+++++++++
+
+------------------------------------------------------------------------------------------------------
+public class Main {
+
+public static void main(String[] args) {
+
+for (int i = 1; i < 10; i++){
+for (int j = 10; j > i; j--){
+  System.out.print("*");
+}
+  for (int n = 0; n < i; n++){
+  System.out.print("+");
+}
+      System.out.println();
+ 
+  } 
+  }
+}
+
+------------------------------------------------------------------------------------------------------
+## **Task 7**
+------------------------------------------------------------------------------------------------------
+
+Instead of printing “*” and “+” let’s print the loop counters themselves
+------------------------------------------------------------------------------------------------------
+
+public static void main(String[] args) {
+for (int i = 0; i < 10; i++) {
+for (int j = 0; j < 10; j++)
+					System.out.println(i + "," + j);
+			}
+	}
+```
+
+This prints
+
+```
+0,0
+0,1
+0,2
+1,0
+1,1
+1,2
+2,0
+2,1
+2,2
+3,0
+3,1
+3,2
+4,0
+4,1
+4,2
+```
+
+Change the program to print
+
+```
+0,0
+0,1
+0,2
+0,3
+1,0
+1,1
+1,2
+1,3
+2,0
+2,1
+2,2
+2,3
+```
+
+------------------------------------------------------------------------------------------------------
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		for (int i = 0; i < 3; i++) {
+			for (int j = 0 ; j < 4  ; j++){
+        System.out.println( i+ "," +j ); 
+      }
+    
+		}
+
+	}
+}
+
+------------------------------------------------------------------------------------------------------
+## **Task 8**
+------------------------------------------------------------------------------------------------------
+
+Create a program to print the 10 times table such as the output is
+------------------------------------------------------------------------------------------------------
+
+1,2,3,4,5,6,7,8,9,10,
+2,4,6,8,10,12,14,16,18,20,
+3,6,9,12,15,18,21,24,27,30,
+4,8,12,16,20,24,28,32,36,40,
+5,10,15,20,25,30,35,40,45,50,
+6,12,18,24,30,36,42,48,54,60,
+7,14,21,28,35,42,49,56,63,70,
+8,16,24,32,40,48,56,64,72,80,
+9,18,27,36,45,54,63,72,81,90,
+10,20,30,40,50,60,70,80,90,100,
+------------------------------------------------------------------------------------------------------
+Bonus point if you can get the formatting like it is zero-padded.
+
+class Main {
+  public static void main(String[] args) {
+    for (int i = 1; i <= 10; i++) {
+      for (int j = 1; j <= 10; j++){
+        System.out.format("%02d,",i*j);
+      }
+      System.out.println();
+    }
+  }
+}
+------------------------------------------------------------------------------------------------------
