@@ -1,0 +1,10 @@
+h1, table{
+background: black;
+color: lime;
+}
+th {
+  color: pink;
+}
+tr {
+  color: yellow;
+}
